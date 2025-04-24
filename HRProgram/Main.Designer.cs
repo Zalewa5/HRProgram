@@ -31,9 +31,9 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnFire = new System.Windows.Forms.Button();
-            this.dgvWorkers = new System.Windows.Forms.DataGridView();
+            this.dgvEmployees = new System.Windows.Forms.DataGridView();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWorkers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -69,16 +69,20 @@
             this.btnFire.UseVisualStyleBackColor = false;
             this.btnFire.Click += new System.EventHandler(this.btnFire_Click);
             // 
-            // dgvWorkers
+            // dgvEmployees
             // 
-            this.dgvWorkers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvWorkers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvWorkers.Location = new System.Drawing.Point(13, 43);
-            this.dgvWorkers.Name = "dgvWorkers";
-            this.dgvWorkers.Size = new System.Drawing.Size(775, 395);
-            this.dgvWorkers.TabIndex = 3;
+            this.dgvEmployees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmployees.Location = new System.Drawing.Point(13, 43);
+            this.dgvEmployees.Name = "dgvEmployees";
+            this.dgvEmployees.ReadOnly = true;
+            this.dgvEmployees.RowHeadersVisible = false;
+            this.dgvEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEmployees.Size = new System.Drawing.Size(775, 395);
+            this.dgvEmployees.TabIndex = 3;
             // 
             // cmbStatus
             // 
@@ -98,13 +102,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.cmbStatus);
-            this.Controls.Add(this.dgvWorkers);
+            this.Controls.Add(this.dgvEmployees);
             this.Controls.Add(this.btnFire);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Name = "Main";
             this.Text = "HRProgram";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWorkers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -114,7 +118,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnFire;
-        private System.Windows.Forms.DataGridView dgvWorkers;
+        private System.Windows.Forms.DataGridView dgvEmployees;
         private System.Windows.Forms.ComboBox cmbStatus;
     }
 }

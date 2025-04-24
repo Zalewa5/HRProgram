@@ -19,14 +19,14 @@ namespace HRProgram
             _filePath = filePath;
         }
 
-        public void SerializeToFile(T workers)
+        public void SerializeToFile(T emp)
         {
             var serializer = new JsonSerializer();
 
             using (StreamWriter sw = new StreamWriter(_filePath))
             using (JsonWriter writer = new JsonTextWriter(sw))
             {
-                serializer.Serialize(writer, workers);
+                serializer.Serialize(writer, emp);
                 writer.Close();
             }
         }
@@ -39,9 +39,9 @@ namespace HRProgram
             using (StreamReader reader = File.OpenText(_filePath))
             {
                 JsonSerializer serializer = new JsonSerializer();
-                T workers = (T)serializer.Deserialize(reader, typeof(T));
+                T emp = (T)serializer.Deserialize(reader, typeof(T));
                 reader.Close();
-                return workers;
+                return emp;
             }
         }
     }

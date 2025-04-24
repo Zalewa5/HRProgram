@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace HRProgram
 {
-    internal class Worker
+    internal class Employee
     {
+        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime HiringDate { get; set; }
         public DateTime? FiringDate { get; set; }
-        public int WorkerId { get; set; }
         public string Comments { get; set; }
         public decimal Salary { get; set; }
     }

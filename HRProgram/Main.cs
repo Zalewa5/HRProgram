@@ -12,28 +12,43 @@ namespace HRProgram
 {
     public partial class Main : Form
     {
-        private FileHelper<List<Worker>> _filehelper = new FileHelper<List<Worker>>(Program.FilePath);
+        private FileHelper<List<Employee>> _filehelper = new FileHelper<List<Employee>>(Program.FilePath);
 
         public Main()
         {
             InitializeComponent();
-            RefreshWorkes();
+            RefreshEmployees();
         }
 
-        private void RefreshWorkes()
+        private void RefreshEmployees()
         {
-            var workers = _filehelper.DeserializeFromFile();
-            dgvWorkers.DataSource = workers;
+            var emp = _filehelper.DeserializeFromFile();
+            dgvEmployees.DataSource = emp;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            var addEditEmployee = new AddEditEmployee();
+            addEditEmployee.FormClosing += AddEditEmployee_FormClosing;
+            addEditEmployee.ShowDialog();
+        }
 
+        private void AddEditEmployee_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            RefreshEmployees();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            if (dgvEmployees.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Select employee to edit their information");
+                return;
+            }
 
+            var addEditEmployee = new AddEditEmployee(Convert.ToInt32(dgvEmployees.SelectedRows[0].Cells[0].Value));
+            addEditEmployee.FormClosing += AddEditEmployee_FormClosing;
+            addEditEmployee.ShowDialog();
         }
 
         private void btnFire_Click(object sender, EventArgs e)
