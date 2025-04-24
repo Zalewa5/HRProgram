@@ -12,9 +12,18 @@ namespace HRProgram
 {
     public partial class Main : Form
     {
+        private FileHelper<List<Worker>> _filehelper = new FileHelper<List<Worker>>(Program.FilePath);
+
         public Main()
         {
             InitializeComponent();
+            RefreshWorkes();
+        }
+
+        private void RefreshWorkes()
+        {
+            var workers = _filehelper.DeserializeFromFile();
+            dgvWorkers.DataSource = workers;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
