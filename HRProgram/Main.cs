@@ -16,5 +16,20 @@ namespace HRProgram
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFire_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
