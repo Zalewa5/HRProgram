@@ -17,13 +17,27 @@ namespace HRProgram
         public Main()
         {
             InitializeComponent();
+            cmbStatus.SelectedIndex = 0;
             RefreshEmployees();
         }
 
         private void RefreshEmployees()
         {
-            var emp = _filehelper.DeserializeFromFile();
-            dgvEmployees.DataSource = emp;
+            var employees = _filehelper.DeserializeFromFile();
+            if (cmbStatus.SelectedIndex == 0)
+            {
+                dgvEmployees.DataSource = employees;
+            }
+            else if (cmbStatus.SelectedIndex == 1)
+            {
+                dgvEmployees.DataSource = employees.Where(emp => (emp.FiringDate == null)).ToList();
+            }
+            else
+            {
+                dgvEmployees.DataSource = employees.Where(emp => (emp.FiringDate != null)).ToList();
+            }
+
+            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -65,6 +79,11 @@ namespace HRProgram
         }
 
         private void FireEmployee_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            RefreshEmployees();
+        }
+
+        private void cmbStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshEmployees();
         }

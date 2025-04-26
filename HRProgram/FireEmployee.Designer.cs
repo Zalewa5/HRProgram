@@ -79,6 +79,8 @@
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.mcFireDate);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(574, 322);
+            this.MinimumSize = new System.Drawing.Size(574, 322);
             this.Name = "FireEmployee";
             this.Text = "FireEmployee";
             this.ResumeLayout(false);
