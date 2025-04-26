@@ -136,6 +136,7 @@
             // 
             this.tbId.Location = new System.Drawing.Point(125, 12);
             this.tbId.Name = "tbId";
+            this.tbId.ReadOnly = true;
             this.tbId.Size = new System.Drawing.Size(200, 20);
             this.tbId.TabIndex = 19;
             // 
@@ -193,7 +194,6 @@
             this.MinimumSize = new System.Drawing.Size(370, 329);
             this.Name = "AddEditEmployee";
             this.Text = "Add";
-            this.Load += new System.EventHandler(this.AddEditEmployee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudSalary)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

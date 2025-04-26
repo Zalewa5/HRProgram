@@ -97,10 +97,5 @@ namespace HRProgram
         {
             Close();
         }
-
-        private void AddEditEmployee_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

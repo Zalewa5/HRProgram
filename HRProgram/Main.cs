@@ -42,7 +42,7 @@ namespace HRProgram
         {
             if (dgvEmployees.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Select employee to edit their information");
+                MessageBox.Show("Select employee to edit their information.");
                 return;
             }
 
@@ -53,7 +53,20 @@ namespace HRProgram
 
         private void btnFire_Click(object sender, EventArgs e)
         {
+            if (dgvEmployees.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Select employee to fire them.");
+                return;
+            }
 
+            var fireEmployee = new FireEmployee(Convert.ToInt32(dgvEmployees.SelectedRows[0].Cells[0].Value));
+            fireEmployee.FormClosing += FireEmployee_FormClosing;
+            fireEmployee.ShowDialog();
+        }
+
+        private void FireEmployee_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            RefreshEmployees();
         }
     }
 }

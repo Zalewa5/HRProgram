@@ -56,6 +56,12 @@
       <DependentUpon>AddEditEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="FileHelper.cs" />
+    <Compile Include="FireEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FireEmployee.Designer.cs">
+      <DependentUpon>FireEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     <Compile Include="Employee.cs" />
     <EmbeddedResource Include="AddEditEmployee.resx">
       <DependentUpon>AddEditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FireEmployee.resx">
+      <DependentUpon>FireEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
