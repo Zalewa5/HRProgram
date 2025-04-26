@@ -19,6 +19,7 @@ namespace HRProgram
             InitializeComponent();
             cmbStatus.SelectedIndex = 0;
             RefreshEmployees();
+            SetColumnsHeader();
         }
 
         private void RefreshEmployees()
@@ -38,6 +39,17 @@ namespace HRProgram
             }
 
             
+        }
+
+        private void SetColumnsHeader()
+        {
+            dgvEmployees.Columns[0].HeaderText = "Id";
+            dgvEmployees.Columns[1].HeaderText = "First name";
+            dgvEmployees.Columns[2].HeaderText = "Last name";
+            dgvEmployees.Columns[3].HeaderText = "Hire date";
+            dgvEmployees.Columns[4].HeaderText = "Termination date";
+            dgvEmployees.Columns[5].HeaderText = "Comments";
+            dgvEmployees.Columns[6].HeaderText = "Salary";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
